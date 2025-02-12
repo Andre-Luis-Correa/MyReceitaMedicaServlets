@@ -1,0 +1,4 @@
+FROM postgres:17
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD=root
+ENV POSTGRES_DB=unioeste_bd

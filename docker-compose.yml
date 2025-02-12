@@ -1,0 +1,29 @@
+services:
+  app-web:
+    build:
+      context: .
+      dockerfile: web/Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - app-db
+    environment:
+      - JAVA_OPTS=-Dapp.env=staging
+    networks:
+      - app-network
+
+  app-db:
+    build:
+      context: db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+volumes:
+  pgdata:
+
+networks:
+  app-network:
