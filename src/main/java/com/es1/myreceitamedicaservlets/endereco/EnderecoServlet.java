@@ -55,9 +55,9 @@ public class EnderecoServlet extends HttpServlet {
 
                 // --------------------
                 // 1) Obter Endereço(s) por CEP
-                // Exemplo de URL: GET /endereco/porCep?cep=12345-678
+                // Exemplo de URL: GET /endereco/cep?cep=12345-678
                 // --------------------
-                case "/porCep": {
+                case "/cep": {
                     String cep = request.getParameter("cep");
                     List<Endereco> enderecos = UCEnderecoGeralServicos.obterEnderecoPorCep(cep);
                     String json = gson.toJson(enderecos);
@@ -67,9 +67,9 @@ public class EnderecoServlet extends HttpServlet {
 
                 // --------------------
                 // 2) Obter Endereço por ID
-                // Exemplo de URL: GET /endereco/porId?id=10
+                // Exemplo de URL: GET /endereco/id?id=10
                 // --------------------
-                case "/porId": {
+                case "/id": {
                     String idParam = request.getParameter("id");
                     Long id = idParam != null && !idParam.isEmpty() ? Long.valueOf(idParam) : null;
                     Endereco endereco = UCEnderecoGeralServicos.obterEnderecoPorId(id);
@@ -151,9 +151,20 @@ public class EnderecoServlet extends HttpServlet {
                 // 9) Obter Lista de Tipos de Logradouro
                 // Exemplo de URL: GET /endereco/tiposLogradouro
                 // --------------------
-                case "/tiposLogradouro": {
+                case "/tipos-logradouro": {
                     List<TipoLogradouro> listaTipos = UCEnderecoGeralServicos.obterListaDeTipoLogradouros();
                     String json = gson.toJson(listaTipos);
+                    response.getWriter().write(json);
+                    break;
+                }
+
+                // --------------------
+                // 10) Obter Lista de Enderecos
+                // Exemplo de URL: GET /endereco/enderecos
+                // --------------------
+                case "/enderecos": {
+                    List<Endereco> listaEnderecos = UCEnderecoGeralServicos.obterListaDeEnderecos();
+                    String json = gson.toJson(listaEnderecos);
                     response.getWriter().write(json);
                     break;
                 }
