@@ -21,15 +21,15 @@ public class ObterEnderecoPorCepServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+
         try {
             String cep = request.getParameter("cep");
 
             List<Endereco> enderecoList = UCEnderecoGeralServicos.obterEnderecoPorCep(cep);
 
             String enderecoJsonString = jsonUtils.convertEntityToJson(enderecoList);
-
-            response.setContentType("application/json");
-            response.setCharacterEncoding("UTF-8");
 
             PrintWriter out = response.getWriter();
             out.print(enderecoJsonString);

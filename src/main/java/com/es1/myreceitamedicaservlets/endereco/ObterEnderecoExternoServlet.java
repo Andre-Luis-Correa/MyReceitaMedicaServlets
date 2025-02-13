@@ -18,15 +18,15 @@ public class ObterEnderecoExternoServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+
         try {
             String cep = request.getParameter("cep");
 
             Endereco endereco = UCEnderecoGeralServicos.obterEnderecoExterno(cep);
 
             String enderecoJsonString = jsonUtils.convertEntityToJson(endereco);
-
-            response.setContentType("application/json");
-            response.setCharacterEncoding("UTF-8");
 
             PrintWriter out = response.getWriter();
             out.print(enderecoJsonString);

@@ -19,9 +19,7 @@ public class CadastrarEnderecoServlet extends HttpServlet {
     private final JsonUtils jsonUtils = new JsonUtils();
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws IOException {
-
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
 

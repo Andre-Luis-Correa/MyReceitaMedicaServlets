@@ -20,13 +20,13 @@ public class ObterCidadesServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+
         try {
             List<Cidade> cidadeList = UCEnderecoGeralServicos.obterListaDeCidades();
 
             String cidadesJsonString = jsonUtils.convertEntityToJson(cidadeList);
-
-            response.setContentType("application/json");
-            response.setCharacterEncoding("UTF-8");
 
             PrintWriter out = response.getWriter();
             out.print(cidadesJsonString);

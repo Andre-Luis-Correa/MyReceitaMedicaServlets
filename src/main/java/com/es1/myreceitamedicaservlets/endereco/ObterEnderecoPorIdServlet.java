@@ -19,15 +19,15 @@ public class ObterEnderecoPorIdServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+
         try {
             Long id = Long.valueOf(request.getParameter("id"));
 
             Endereco endereco = UCEnderecoGeralServicos.obterEnderecoPorId(id);
 
             String enderecoJsonString = jsonUtils.convertEntityToJson(endereco);
-
-            response.setContentType("application/json");
-            response.setCharacterEncoding("UTF-8");
 
             PrintWriter out = response.getWriter();
             out.print(enderecoJsonString);

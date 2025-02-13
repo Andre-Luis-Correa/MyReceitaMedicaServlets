@@ -19,15 +19,15 @@ public class ObterCidadePorIdServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+
         try {
             Long id = Long.valueOf(request.getParameter("id"));
 
             Cidade cidade = UCEnderecoGeralServicos.obterCidade(id);
 
             String cidadeJsonString = jsonUtils.convertEntityToJson(cidade);
-
-            response.setContentType("application/json");
-            response.setCharacterEncoding("UTF-8");
 
             PrintWriter out = response.getWriter();
             out.print(cidadeJsonString);

@@ -19,13 +19,13 @@ public class ObterLogradourosServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+
         try {
             List<Logradouro> logradouroList = UCEnderecoGeralServicos.obterListaDeLogradouros();
 
             String logradouroJsonString = jsonUtils.convertEntityToJson(logradouroList);
-
-            response.setContentType("application/json");
-            response.setCharacterEncoding("UTF-8");
 
             PrintWriter out = response.getWriter();
             out.print(logradouroJsonString);
