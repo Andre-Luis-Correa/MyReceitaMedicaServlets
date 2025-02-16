@@ -1,7 +1,6 @@
 package com.es1.myreceitamedicaservlets.endereco;
 
 import com.es1.myreceitamedicaservlets.utils.JsonUtils;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -11,7 +10,6 @@ import unioeste.geral.endereco.exception.EnderecoException;
 import unioeste.geral.endereco.service.UCEnderecoGeralServicos;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet("/endereco/cadastrar")
 public class CadastrarEnderecoServlet extends HttpServlet {

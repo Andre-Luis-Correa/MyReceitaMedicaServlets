@@ -6,7 +6,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import unioeste.geral.endereco.bo.cidade.Cidade;
-import unioeste.geral.endereco.bo.unidadefederativa.UnidadeFederativa;
 import unioeste.geral.endereco.service.UCEnderecoGeralServicos;
 
 import java.io.IOException;

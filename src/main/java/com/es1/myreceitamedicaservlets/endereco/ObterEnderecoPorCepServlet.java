@@ -7,8 +7,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import unioeste.geral.endereco.bo.endereco.Endereco;
 import unioeste.geral.endereco.service.UCEnderecoGeralServicos;
-import unioeste.geral.receitamedica.bo.paciente.Paciente;
-import unioeste.geral.receitamedica.service.UCPacienteServicos;
 
 import java.io.IOException;
 import java.io.PrintWriter;

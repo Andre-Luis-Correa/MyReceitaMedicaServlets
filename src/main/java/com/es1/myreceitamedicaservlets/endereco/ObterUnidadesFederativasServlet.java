@@ -5,7 +5,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import unioeste.geral.endereco.bo.endereco.Endereco;
 import unioeste.geral.endereco.bo.unidadefederativa.UnidadeFederativa;
 import unioeste.geral.endereco.service.UCEnderecoGeralServicos;
 

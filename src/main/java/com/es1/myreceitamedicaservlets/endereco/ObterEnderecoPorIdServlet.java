@@ -10,7 +10,6 @@ import unioeste.geral.endereco.service.UCEnderecoGeralServicos;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
 @WebServlet("/endereco/id")
 public class ObterEnderecoPorIdServlet extends HttpServlet {
