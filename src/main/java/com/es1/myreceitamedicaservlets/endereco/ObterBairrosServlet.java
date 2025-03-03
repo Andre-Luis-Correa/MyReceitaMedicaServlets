@@ -23,7 +23,9 @@ public class ObterBairrosServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
 
         try {
-            List<Bairro> bairroList = UCEnderecoGeralServicos.obterListaDeBairros();
+            UCEnderecoGeralServicos ucEnderecoGeralServicos = new UCEnderecoGeralServicos();
+
+            List<Bairro> bairroList = ucEnderecoGeralServicos.obterListaDeBairros();
 
             String bairroJsonString = jsonUtils.convertEntityToJson(bairroList);
 

@@ -22,9 +22,11 @@ public class ConsultarPacienteServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
 
         try {
+            UCPacienteServicos ucPacienteServicos = new UCPacienteServicos();
+
             Long id = Long.parseLong(request.getParameter("id"));
 
-            Paciente paciente = UCPacienteServicos.consultarPaciente(id);
+            Paciente paciente = ucPacienteServicos.consultarPaciente(id);
 
             String pacienteJsonString = jsonUtils.convertEntityToJson(paciente);
 

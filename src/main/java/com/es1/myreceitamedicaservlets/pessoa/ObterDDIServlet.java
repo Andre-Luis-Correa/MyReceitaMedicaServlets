@@ -23,7 +23,9 @@ public class ObterDDIServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
 
         try {
-            List<DDI> ddiList = ServicosPessoasGerais.obterTodosDDI();
+            ServicosPessoasGerais servicosPessoasGerais = new ServicosPessoasGerais();
+
+            List<DDI> ddiList = servicosPessoasGerais.obterTodosDDI();
 
             String ddiJsonString = jsonUtils.convertEntityToJson(ddiList);
 

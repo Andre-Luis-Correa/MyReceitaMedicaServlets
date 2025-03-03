@@ -23,9 +23,11 @@ public class ObterEnderecoPorCepServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
 
         try {
+            UCEnderecoGeralServicos ucEnderecoGeralServicos = new UCEnderecoGeralServicos();
+
             String cep = request.getParameter("cep");
 
-            List<Endereco> enderecoList = UCEnderecoGeralServicos.obterEnderecoPorCep(cep);
+            List<Endereco> enderecoList = ucEnderecoGeralServicos.obterEnderecoPorCep(cep);
 
             String enderecoJsonString = jsonUtils.convertEntityToJson(enderecoList);
 

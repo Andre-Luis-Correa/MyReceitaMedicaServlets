@@ -22,9 +22,11 @@ public class ObterCidadePorIdServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
 
         try {
+            UCEnderecoGeralServicos ucEnderecoGeralServicos = new UCEnderecoGeralServicos();
+
             Long id = Long.valueOf(request.getParameter("id"));
 
-            Cidade cidade = UCEnderecoGeralServicos.obterCidade(id);
+            Cidade cidade = ucEnderecoGeralServicos.obterCidade(id);
 
             String cidadeJsonString = jsonUtils.convertEntityToJson(cidade);
 

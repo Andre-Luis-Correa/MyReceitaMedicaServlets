@@ -22,11 +22,13 @@ public class CadastrarEnderecoServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
 
         try {
+            UCEnderecoGeralServicos ucEnderecoGeralServicos = new UCEnderecoGeralServicos();
+
             String body = jsonUtils.lerBody(request);
 
             Endereco novoEndereco = jsonUtils.convertJsonToEntity(body, Endereco.class);
 
-            Endereco enderecoCadastrado = UCEnderecoGeralServicos.cadastrarEndereco(novoEndereco);
+            Endereco enderecoCadastrado = ucEnderecoGeralServicos.cadastrarEndereco(novoEndereco);
 
             String json = jsonUtils.convertEntityToJson(enderecoCadastrado);
             response.getWriter().write(json);

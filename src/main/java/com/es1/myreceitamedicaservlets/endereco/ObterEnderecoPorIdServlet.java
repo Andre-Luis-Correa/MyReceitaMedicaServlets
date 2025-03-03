@@ -22,9 +22,11 @@ public class ObterEnderecoPorIdServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
 
         try {
+            UCEnderecoGeralServicos ucEnderecoGeralServicos = new UCEnderecoGeralServicos();
+
             Long id = Long.valueOf(request.getParameter("id"));
 
-            Endereco endereco = UCEnderecoGeralServicos.obterEnderecoPorId(id);
+            Endereco endereco = ucEnderecoGeralServicos.obterEnderecoPorId(id);
 
             String enderecoJsonString = jsonUtils.convertEntityToJson(endereco);
 

@@ -23,7 +23,9 @@ public class ObterSexosServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
 
         try {
-            List<Sexo> sexoList = ServicosPessoasGerais.obterTodosSexo();
+            ServicosPessoasGerais servicosPessoasGerais = new ServicosPessoasGerais();
+
+            List<Sexo> sexoList = servicosPessoasGerais.obterTodosSexo();
 
             String sexoJsonString = jsonUtils.convertEntityToJson(sexoList);
 

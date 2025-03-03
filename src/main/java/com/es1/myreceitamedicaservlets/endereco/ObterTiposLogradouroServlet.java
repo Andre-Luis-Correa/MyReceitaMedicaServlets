@@ -23,7 +23,9 @@ public class ObterTiposLogradouroServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
 
         try {
-            List<TipoLogradouro> tipoLogradouroList = UCEnderecoGeralServicos.obterListaDeTipoLogradouros();
+            UCEnderecoGeralServicos ucEnderecoGeralServicos = new UCEnderecoGeralServicos();
+
+            List<TipoLogradouro> tipoLogradouroList = ucEnderecoGeralServicos.obterListaDeTipoLogradouros();
 
             String tipoLogradouroJsonString = jsonUtils.convertEntityToJson(tipoLogradouroList);
 

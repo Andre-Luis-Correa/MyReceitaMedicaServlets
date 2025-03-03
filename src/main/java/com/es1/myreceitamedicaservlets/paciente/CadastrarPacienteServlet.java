@@ -22,11 +22,13 @@ public class CadastrarPacienteServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
 
         try {
+            UCPacienteServicos ucPacienteServicos = new UCPacienteServicos();
+
             String body = jsonUtils.lerBody(request);
 
             Paciente novoPaciente = jsonUtils.convertJsonToEntity(body, Paciente.class);
 
-            Paciente pacienteCadastrado = UCPacienteServicos.cadastrarPaciente(novoPaciente);
+            Paciente pacienteCadastrado = ucPacienteServicos.cadastrarPaciente(novoPaciente);
 
             String json = jsonUtils.convertEntityToJson(pacienteCadastrado);
             response.getWriter().write(json);

@@ -23,7 +23,9 @@ public class ObterUnidadesFederativasServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
 
         try {
-            List<UnidadeFederativa> unidadeFederativaList = UCEnderecoGeralServicos.obterListaDeUnidadesFederativas();
+            UCEnderecoGeralServicos ucEnderecoGeralServicos = new UCEnderecoGeralServicos();
+
+            List<UnidadeFederativa> unidadeFederativaList = ucEnderecoGeralServicos.obterListaDeUnidadesFederativas();
 
             String ufsJsonString = jsonUtils.convertEntityToJson(unidadeFederativaList);
 
