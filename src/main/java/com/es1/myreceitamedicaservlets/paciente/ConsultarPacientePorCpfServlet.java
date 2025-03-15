@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @WebServlet("/paciente/consultar")
-public class ConsultarPacienteServlet extends HttpServlet {
+public class ConsultarPacientePorCpfServlet extends HttpServlet {
 
     private final JsonUtils jsonUtils = new JsonUtils();
 
@@ -24,9 +24,9 @@ public class ConsultarPacienteServlet extends HttpServlet {
         try {
             UCPacienteServicos ucPacienteServicos = new UCPacienteServicos();
 
-            Long id = Long.parseLong(request.getParameter("id"));
+            String cpf = request.getParameter("cpf");
 
-            Paciente paciente = ucPacienteServicos.consultarPaciente(id);
+            Paciente paciente = ucPacienteServicos.consultarPacientePorCpf(cpf);
 
             String pacienteJsonString = jsonUtils.convertEntityToJson(paciente);
 
