@@ -11,7 +11,7 @@ import unioeste.geral.receitamedica.service.UCMedicoServicos;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/medico/consultar")
+@WebServlet("/medico/consultar/cpf")
 public class ConsultarMedicoPorCpfServlet extends HttpServlet {
 
     private final JsonUtils jsonUtils = new JsonUtils();

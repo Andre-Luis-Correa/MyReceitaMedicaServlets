@@ -13,7 +13,7 @@ import unioeste.geral.receitamedica.service.UCPacienteServicos;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/medico/consultar")
+@WebServlet("/medico/consultar/id")
 public class ConsultarMedicoPorIdServlet extends HttpServlet {
 
     private final JsonUtils jsonUtils = new JsonUtils();
