@@ -6,10 +6,13 @@ import jakarta.servlet.http.HttpServletRequest;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class JsonUtils {
 
-    private final Gson gson = new GsonBuilder().create();
+    Gson gson = new GsonBuilder()
+            .registerTypeAdapter(LocalDate.class, new LocalDateAdapter())
+            .create();
 
     public JsonUtils() {
 
